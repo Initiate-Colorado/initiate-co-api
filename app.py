@@ -9,7 +9,7 @@ app = Flask(__name__)
 api = Api(app)
 
 BALLOTS = webScraper()
-DETAILS = coGaScraper()
+DATES = coGaScraper()
 
 parser = reqparse.RequestParser()
 
@@ -20,7 +20,7 @@ class BallotDetails(Resource):
 
 class BallotDueDates(Resource):
   def get(self):
-    return DETAILS
+    return DATES
 
 
 api.add_resource(BallotDetails, '/ballots/')
