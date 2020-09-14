@@ -8,6 +8,12 @@ from co_ga_scraper import coGaScraper
 app = Flask(__name__)
 api = Api(app)
 
+@app.route('/')
+def hello():
+    return "Welcome to Initiate Colorado!"
+if __name__ == '__main__':
+    app.run()
+
 BALLOTS = webScraper()
 DATES = coGaScraper()
 
